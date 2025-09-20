@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ขจรศักดิ์ จันทรเสนา(ฮาร์ท)</title>
+</head>
+
+<body>
+	<h1>ขจรศักดิ์ จันทรเสนา(ฮาร์ท)</h1>
+    <hr>
+    <h1>การสร้างแบบฟอร์มรับข้อมูล</h1>
+    
+    <form method="post" action="" enctype="multipart/form-data">
+   
+   คำนำหน้าชื่อ 
+   <input type="radio" name="title" value="นาย" checked>นาย
+   <input type="radio" name="title" value="นาง">นาง
+   <input type="radio" name="title" value="นางสาว">นางสาว<br>
+   
+    ชื่อ-สกุล *<input type="text" name="fullname" autofocus required><br>
+    
+    อายุ *<input type="number" name="age" min="1" max="100" required><br>
+    
+    วันเดือนปีเกิด <input type="date" name="birthday"><br>
+    
+    สีทีชอบ <input type="color" name="color"><br>
+    
+    ที่อยู่ <br>
+    <textarea name="address" cols="50" rows="5"></textarea><br>
+    
+    อาชีพ
+    <select name="career">
+    	<option value="นิสิต/นักศึกษา">นิสิต/นักศึกษา</option>
+        <option value="ตำรวจ">ตำรวจ</option>
+        <option value="ทหาร">ทหาร</option>
+        <option value="อาจารย์">อาจารย์</option>
+        <option value="แพทย์">แพทย์</option>
+        <option value="ธุรกิจส่วนตัว">ธุรกิจส่วนตัว</option>
+        <option value="อื่นๆ">อื่นๆ</option>
+    </select>
+    <br>
+    
+    อาหารที่ชอบ
+    <input type="checkbox" name="food[]" value="ส้มตำ">ส้มตำ
+    <input type="checkbox" name="food[]" value="ไก่ย่าง">ไก่ย่าง
+    <input type="checkbox" name="food[]" value="ป่นปลาแซ่บๆ">ป่นปลาแซ่บๆ
+    <input type="checkbox" name="food[]" value="หมูปิ้ง">หมูปิ้ง
+    <input type="checkbox" name="food[]" value="ส้มผัก">ส้มผัก
+    
+    <br><br>
+    <!--<input type="submit" name="Submit" value="ลงทะเบียน">-->    
+    <button type="submit" name="Submit">ลงทะเบียน</button>
+    <button type="reset" >Reset</button>
+    <button type="button" onClick="window.print();">พิมพ์หน้านี้</button>
+    <button type="button" onClick="window.print();">พิมพ์หน้านี้</button>
+    <button type="button" onClicks="alert('สวัสดี');">สวัสดี</button>
+    <button type="button" onClick="window.location='https://www.msu.ac.th';">Go to MSU</button>
+ 
+    
+    </form>
+</body>
+</html>
