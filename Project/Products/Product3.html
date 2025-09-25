@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header {
+            background-color: #2155CD;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+
+        }
+        main {
+            padding: 50px;
+        }
+        .navbar-custom {
+        background-color: #2155CD;
+        border-bottom: 1px solid #2155CD;
+        margin-top: 0 0px;
+        padding: 2px 8px;
+        }
+        .navbar-custom .nav-link {
+        color: #FDDE55;
+        font-size: 14px;
+        margin-right: 15px;
+        padding: 0 15px;
+        }
+        .navbar-custom .nav-link:hover {
+        color: #fff;
+        }
+        .social-icons a {
+        margin-right: 10px;
+        font-size: 18px;
+        color: #fff;
+        }
+        .social-icons a:hover {
+        color: #FDDE55;
+        }
+        .navbar-avatar img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 5px;
+        }
+
+        .shopee-page-controller {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin: 20px 0;
+        }
+
+        .shopee-icon-button,
+        .shopee-button-no-outline,
+        .shopee-button-solid {
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        background: transparent;
+        cursor: pointer;
+        }
+
+        .shopee-icon-button svg {
+        fill: #555;
+        }
+
+        .shopee-button-no-outline {
+        background: white;
+        color: #333;
+        }
+
+        .shopee-button-solid {
+        background: #FDDE55;
+        color: white;
+        }
+
+        .shopee-button-no-outline--non-click {
+        cursor: default;
+        color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <!-- ด้านซ้าย -->
+                <a class="nav-link" href="#" target="_blank">Seller Centre</a>
+                <a class="nav-link" href="#">เปิดร้านค้า</a>
+                <a class="nav-link" href="#">ดาวน์โหลด</a>
+                <span class="nav-link">ติดตามเรา</span>
+                <div class="social-icons d-flex">
+                    <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                        </svg>
+                    </a>
+                    <a href="https://line.me" target="_blank"><i class="bi bi-line"></i>
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-line" viewBox="0 0 16 16">
+                        <path d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0M5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.15.15 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157m.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832l-.013-.015v-.001l-.01-.01-.003-.003-.011-.009h-.001L7.88 4.79l-.003-.002-.005-.003-.008-.005h-.002l-.003-.002-.01-.004-.004-.002-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.2.2 0 0 0 .039.038l.001.001.01.006.004.002.008.004.007.003.005.002.01.003h.003a.2.2 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.16.16 0 0 0-.108.044h-.001l-.001.002-.002.003a.16.16 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.16.16 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z"/>
+                      </svg>
+                    </a>
+                </div>
+
+                <!-- ด้านขวา -->
+                <div class="ms-auto d-flex align-items-center">
+                <a class="nav-link" href="#">การแจ้งเตือน</a>
+                <a class="nav-link" href="#">ช่วยเหลือ</a>
+                </div>
+
+                <!-- Dropdown เปลี่ยนภาษา -->
+                <div class="dropdown me-3">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    ไทย
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">ไทย</a></li>
+                    <li><a class="dropdown-item" href="#">English</a></li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container"> 
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"> 
+                <!-- Logo -->
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"> 
+                    <img src="https://picsum.photos/1200/400?random=11" class="rounded-circle overflow-hidden" 
+                    style="width:80px; height:80px;">
+                </a>
+
+                <!-- Navbar -->
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="../Homepage/Home.html" class="nav-link px-4 text-warning" style="font-size: 50px;">Read On</a></li> 
+                    <!-- <li><a href="#" class="nav-link px-4 text-secondary">Home</a></li> 
+                    <li><a href="#" class="nav-link px-4 text-white">Features</a></li> 
+                    <li><a href="#" class="nav-link px-4 text-white">Pricing</a></li> 
+                    <li><a href="#" class="nav-link px-4 text-white">FAQs</a></li> 
+                    <li><a href="#" class="nav-link px-4 text-white">About</a></li>  -->
+                </ul>
+
+                <!-- 🔍 Search bar -->
+                <form class="d-flex me-3" style="width: 800px;" role="search">
+                    <input class="form-control me-2" type="search" placeholder="ค้นหาหนังสือ..." aria-label="Search">
+                    <button class="btn btn-outline-warning" type="submit">Search</button>
+                </form>
+
+                <!-- Login / Signup -->
+                <!-- <div class="text-end"> 
+                    <button type="button" class="btn btn-outline-light me-2">Login</button> 
+                    <button type="button" class="btn btn-warning">Sign-up</button> 
+                </div> -->
+                <!-- ปุ่ม Login/Signup + Cart + Account -->
+            <div class="text-end d-flex align-items-center gap-3"> 
+                <!-- ปุ่มตะกร้า -->
+                <button id="cartButton"
+                        class="cart-btn btn btn-outline-light position-relative"
+                        aria-controls="cartOffcanvas"
+                        aria-expanded="false"
+                        aria-label="Shopping cart">
+                    <!-- ไอคอนตะกร้า -->
+                    <svg viewBox="0 0 26.6 25.6" width="24" height="24">
+                        <polyline fill="none" points="2 1.7 5.5 1.7 9.6 18.3 21.2 18.3 24.6 6.1 7 6.1"
+                                    stroke="white" stroke-linecap="round" stroke-linejoin="round" 
+                                    stroke-miterlimit="10" stroke-width="2.5"></polyline>
+                        <circle cx="10.7" cy="23" r="2.2" fill="white"></circle>
+                        <circle cx="19.7" cy="23" r="2.2" fill="white"></circle>
+                    </svg>
+                    <!-- badge -->
+                    <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                    </span>
+                </button>
+
+                <!-- Account Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="avatarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://down-th.img.susercontent.com/file/6109d8ed7204998f787c35686d70229e_tn" alt="avatar" width="40" height="40" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarDropdown">
+                        <li><a class="dropdown-item" onclick="window.location.href='#'">โปรไฟล์</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='#'">การตั้งค่า</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='../Login/Login.html'">ออกจากระบบ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Produbt -->
+        <div class="container my-5 bg-light">
+            <div id="product-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 row-cols-md-4 g-4">
+                
+                <!-- สินค้า 1 -->
+                <div class="col">
+                <div class="card shadow-sm">
+                    <a href="../Products/Product1.html" class="text-decoration-none text-dark">
+                    <img src="https://picsum.photos/400/250?random=1" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text mb-2">คำอธิบายรูปที่ 1</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="product-sku text-muted small">รหัสสินค้า: <span class="fw-semibold">A015031</span></div>
+                        <div class="product-ratings d-flex align-items-center">
+                            <span class="text-warning me-1 fs-5">★★★★☆</span>
+                            <small class="text-muted">(100 รีวิว)</small>
+                        </div>
+                        <div class="price text-end">
+                            <span class="text-danger fs-4 fw-bold">฿ 4,500.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2 small">฿ 6,000.00</span>
+                        </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                </div>
+
+                <!-- สินค้า 2 -->
+                <div class="col">
+                <div class="card shadow-sm">
+                    <a href="../Products/Product2.html" class="text-decoration-none text-dark">
+                    <img src="https://picsum.photos/400/250?random=2" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text mb-2">คำอธิบายรูปที่ 2</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="product-sku text-muted small">รหัสสินค้า: <span class="fw-semibold">A015032</span></div>
+                        <div class="product-ratings d-flex align-items-center">
+                            <span class="text-warning me-1 fs-5">★★★★★</span>
+                            <small class="text-muted">(120 รีวิว)</small>
+                        </div>
+                        <div class="price text-end">
+                            <span class="text-danger fs-4 fw-bold">฿ 4,890.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2 small">฿ 7,990.00</span>
+                        </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                </div>
+
+                <!-- สินค้า 3 -->
+                <div class="col">
+                <div class="card shadow-sm">
+                    <a href="../Products/Product3.html" class="text-decoration-none text-dark">
+                    <img src="https://picsum.photos/400/250?random=3" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text mb-2">คำอธิบายรูปที่ 3</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="product-sku text-muted small">รหัสสินค้า: <span class="fw-semibold">A015033</span></div>
+                        <div class="product-ratings d-flex align-items-center">
+                            <span class="text-warning me-1 fs-5">★★★☆☆</span>
+                            <small class="text-muted">(80 รีวิว)</small>
+                        </div>
+                        <div class="price text-end">
+                            <span class="text-danger fs-4 fw-bold">฿ 3,500.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2 small">฿ 5,500.00</span>
+                        </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                </div>
+
+                <!-- สินค้า 4 -->
+                <div class="col">
+                <div class="card shadow-sm">
+                    <a href="../Products/Product3.html" class="text-decoration-none text-dark">
+                    <img src="https://picsum.photos/400/250?random=4" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text mb-2">คำอธิบายรูปที่ 4</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="product-sku text-muted small">รหัสสินค้า: <span class="fw-semibold">A015033</span></div>
+                        <div class="product-ratings d-flex align-items-center">
+                            <span class="text-warning me-1 fs-5">★★★☆☆</span>
+                            <small class="text-muted">(80 รีวิว)</small>
+                        </div>
+                        <div class="price text-end">
+                            <span class="text-danger fs-4 fw-bold">฿ 3,500.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2 small">฿ 5,500.00</span>
+                        </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                </div>
+
+                <!-- สินค้า 5 -->
+                <div class="col">
+                <div class="card shadow-sm">
+                    <a href="../Products/Product3.html" class="text-decoration-none text-dark">
+                    <img src="https://picsum.photos/400/250?random=5" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text mb-2">คำอธิบายรูปที่ 5</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="product-sku text-muted small">รหัสสินค้า: <span class="fw-semibold">A015033</span></div>
+                        <div class="product-ratings d-flex align-items-center">
+                            <span class="text-warning me-1 fs-5">★★★☆☆</span>
+                            <small class="text-muted">(80 รีวิว)</small>
+                        </div>
+                        <div class="price text-end">
+                            <span class="text-danger fs-4 fw-bold">฿ 3,500.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2 small">฿ 5,500.00</span>
+                        </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                </div>
+
+                <!-- สินค้า 6 -->
+                <div class="col">
+                <div class="card shadow-sm">
+                    <a href="../Products/Product3.html" class="text-decoration-none text-dark">
+                    <img src="https://picsum.photos/400/250?random=6" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text mb-2">คำอธิบายรูปที่ 6</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="product-sku text-muted small">รหัสสินค้า: <span class="fw-semibold">A015033</span></div>
+                        <div class="product-ratings d-flex align-items-center">
+                            <span class="text-warning me-1 fs-5">★★★☆☆</span>
+                            <small class="text-muted">(80 รีวิว)</small>
+                        </div>
+                        <div class="price text-end">
+                            <span class="text-danger fs-4 fw-bold">฿ 3,500.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2 small">฿ 5,500.00</span>
+                        </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                </div>
+
+                <!-- สินค้า 7 -->
+                <div class="col">
+                <div class="card shadow-sm">
+                    <a href="../Products/Product3.html" class="text-decoration-none text-dark">
+                    <img src="https://picsum.photos/400/250?random=7" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text mb-2">คำอธิบายรูปที่ 7</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="product-sku text-muted small">รหัสสินค้า: <span class="fw-semibold">A015033</span></div>
+                        <div class="product-ratings d-flex align-items-center">
+                            <span class="text-warning me-1 fs-5">★★★☆☆</span>
+                            <small class="text-muted">(80 รีวิว)</small>
+                        </div>
+                        <div class="price text-end">
+                            <span class="text-danger fs-4 fw-bold">฿ 3,500.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2 small">฿ 5,500.00</span>
+                        </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                </div>
+
+                <!-- สินค้า 8 -->
+                <div class="col">
+                <div class="card shadow-sm">
+                    <a href="../Products/Product3.html" class="text-decoration-none text-dark">
+                    <img src="https://picsum.photos/400/250?random=8" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text mb-2">คำอธิบายรูปที่ 8</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="product-sku text-muted small">รหัสสินค้า: <span class="fw-semibold">A015033</span></div>
+                        <div class="product-ratings d-flex align-items-center">
+                            <span class="text-warning me-1 fs-5">★★★☆☆</span>
+                            <small class="text-muted">(80 รีวิว)</small>
+                        </div>
+                        <div class="price text-end">
+                            <span class="text-danger fs-4 fw-bold">฿ 3,500.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2 small">฿ 5,500.00</span>
+                        </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                </div>
+
+                <!-- สินค้า 9 -->
+                <div class="col">
+                <div class="card shadow-sm">
+                    <a href="../Products/Product3.html" class="text-decoration-none text-dark">
+                    <img src="https://picsum.photos/400/250?random=9" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text mb-2">คำอธิบายรูปที่ 9</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="product-sku text-muted small">รหัสสินค้า: <span class="fw-semibold">A015033</span></div>
+                        <div class="product-ratings d-flex align-items-center">
+                            <span class="text-warning me-1 fs-5">★★★☆☆</span>
+                            <small class="text-muted">(80 รีวิว)</small>
+                        </div>
+                        <div class="price text-end">
+                            <span class="text-danger fs-4 fw-bold">฿ 3,500.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2 small">฿ 5,500.00</span>
+                        </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                </div>
+
+                <!-- สินค้า 10 -->
+                <div class="col">
+                <div class="card shadow-sm">
+                    <a href="../Products/Product3.html" class="text-decoration-none text-dark">
+                    <img src="https://picsum.photos/400/250?random=10" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text mb-2">คำอธิบายรูปที่ 10</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="product-sku text-muted small">รหัสสินค้า: <span class="fw-semibold">A015033</span></div>
+                        <div class="product-ratings d-flex align-items-center">
+                            <span class="text-warning me-1 fs-5">★★★☆☆</span>
+                            <small class="text-muted">(80 รีวิว)</small>
+                        </div>
+                        <div class="price text-end">
+                            <span class="text-danger fs-4 fw-bold">฿ 3,500.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2 small">฿ 5,500.00</span>
+                        </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                </div>
+
+                <!-- สินค้า 11 -->
+                <div class="col">
+                <div class="card shadow-sm">
+                    <a href="../Products/Product3.html" class="text-decoration-none text-dark">
+                    <img src="https://picsum.photos/400/250?random=11" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text mb-2">คำอธิบายรูปที่ 11</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="product-sku text-muted small">รหัสสินค้า: <span class="fw-semibold">A015033</span></div>
+                        <div class="product-ratings d-flex align-items-center">
+                            <span class="text-warning me-1 fs-5">★★★☆☆</span>
+                            <small class="text-muted">(80 รีวิว)</small>
+                        </div>
+                        <div class="price text-end">
+                            <span class="text-danger fs-4 fw-bold">฿ 3,500.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2 small">฿ 5,500.00</span>
+                        </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                </div>
+
+                <!-- สินค้า 12 -->
+                <div class="col">
+                <div class="card shadow-sm">
+                    <a href="../Products/Product3.html" class="text-decoration-none text-dark">
+                    <img src="https://picsum.photos/400/250?random=12" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text mb-2">คำอธิบายรูปที่ 12</p>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="product-sku text-muted small">รหัสสินค้า: <span class="fw-semibold">A015033</span></div>
+                        <div class="product-ratings d-flex align-items-center">
+                            <span class="text-warning me-1 fs-5">★★★☆☆</span>
+                            <small class="text-muted">(80 รีวิว)</small>
+                        </div>
+                        <div class="price text-end">
+                            <span class="text-danger fs-4 fw-bold">฿ 3,500.00</span>
+                            <span class="text-muted text-decoration-line-through ms-2 small">฿ 5,500.00</span>
+                        </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                </div>
+
+            </div>
+            </div>
+            <!-- เพิ่ม Card อื่น ๆ ได้เรื่อย ๆ -->
+    </div>
+    <!-- ✅ JavaScript สำหรับสุ่มสินค้า -->
+        <script>
+            // เลือก container ที่เก็บสินค้า
+            const productList = document.getElementById("product-list");
+
+            // ดึงลูก (การ์ดสินค้าแต่ละอัน) มาเก็บเป็น Array
+            const products = Array.from(productList.children);
+
+            // สุ่มลำดับด้วย Fisher–Yates shuffle
+            for (let i = products.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [products[i], products[j]] = [products[j], products[i]];
+            }
+
+            // เคลียร์สินค้าเก่า
+            productList.innerHTML = "";
+
+            // ใส่สินค้ากลับไปตามลำดับใหม่
+            products.forEach(p => productList.appendChild(p));
+        </script>
+      <!-- ปุ่มเลือกหน้า -->
+    <nav aria-label="Page navigation" class="shopee-page-controller" role="navigation">
+        <!-- ปุ่มย้อนกลับ -->
+        <button class="shopee-icon-button shopee-icon-button--left" aria-label="Previous">
+            <svg viewBox="0 0 11 11" width="16" height="16" class="shopee-svg-icon icon-arrow-left">
+            <path d="M8.5 11c-.1 0-.2 0-.3-.1l-6-5c-.1-.1-.2-.3-.2-.4s.1-.3.2-.4l6-5c.2-.2.5-.1.7.1s.1.5-.1.7L3.3 5.5l5.5 4.6c.2.2.2.5.1.7-.1.1-.3.2-.4.2z"/>
+            </svg>
+        </button>
+
+        <!-- หมายเลขหน้า -->
+        <button class="shopee-button-no-outline" onclick="window.location.href='../Homepage/Home.html'">1</button>
+        <button class="shopee-button-no-outline" onclick="window.location.href='../Products/Product2.html'">2</button>
+        <button class="shopee-button-solid" onclick="window.location.href='../Products/Product3.html'">3</button>
+        <button class="shopee-button-no-outline" onclick="window.location.href='../Products/Product4.html'">4</button>
+        <button class="shopee-button-no-outline" onclick="window.location.href='../Products/Product5.html'">5</button>
+        <button class="shopee-button-no-outline shopee-button-no-outline--non-click" disabled>...</button>
+
+        <!-- ปุ่มถัดไป -->
+        <button class="shopee-icon-button shopee-icon-button--right" aria-label="Next">
+            <svg viewBox="0 0 11 11" width="16" height="16" class="shopee-svg-icon icon-arrow-right">
+            <path d="M2.5 11c.1 0 .2 0 .3-.1l6-5c.1-.1.2-.3.2-.4s-.1-.3-.2-.4l-6-5c-.2-.2-.5-.1-.7.1s-.1.5.1.7l5.5 4.6-5.5 4.6c-.2.2-.2.5-.1.7.1.1.3.2.4.2z"/>
+            </svg>
+        </button>
+        </nav>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="container"> 
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top"> 
+            <div class="col mb-3"> 
+                <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" aria-label="Bootstrap"> 
+                    <svg class="bi me-2" width="40" height="32" aria-hidden="true">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg> 
+                </a>
+                <!-- <img src="https://picsum.photos/400/250?random=12" style="width: 60px;">  -->
+                <p class="text-body-secondary">© 2025</p> 
+            </div> 
+            <div class="col mb-3"></div> 
+            <div class="col mb-3">
+                <h5>หมวดหมู่หนังสือ</h5>
+                <ul class="nav flex-column"> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">หมวดวรรณกรรม</a></li> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">หมวดสารคดีและสารสนเทศ</a></li> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">หมวดพัฒนาตนเองและจิตวิทยา</a></li> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">หมวดหมู่เฉพาะทาง</a></li> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">หมวดหมู่อื่นๆ</a></li> 
+                </ul> 
+            </div> 
+            <div class="col mb-3"> 
+                <h5>สินค้า</h5> 
+                <ul class="nav flex-column"> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> 
+                </ul> 
+            </div> 
+            <div class="col mb-3"> 
+                <h5>เกี่ยวกับเรา</h5>
+                <ul class="nav flex-column"> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li> 
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> 
+                </ul> 
+            </div>
+        </footer> 
+    </div>
+
+</body>
+</html>
